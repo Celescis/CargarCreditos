@@ -1,0 +1,87 @@
+<ion-content force-overscroll="false" [hidden]="scanActive" class="ioncont">
+  <div class="backgroundLayer">
+    <ion-header>
+      <ion-toolbar class="header">
+        <ion-buttons id="open-custom-dialog" slot="start">
+          <ion-icon id="limpiar" name="trash-outline" color="success" class="toolbar-icon"></ion-icon>
+        </ion-buttons>
+        <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+          <ng-template>
+            <div class="wrapper" style="padding: 10px; padding-bottom: 30px">
+              <h3 style="
+                    color: #fff;
+                    text-align: center;
+                    text-shadow: 0px 2px #585858;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                    font-family: 'Inconsolata', monospace;
+                  ">
+                ¿Seguro desea borrar sus créditos?
+              </h3>
+              <p style="
+                    color: #fff;
+                    text-align: center;
+                    text-shadow: 0px 2px #585858;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                    font-family: 'Inconsolata', monospace;
+                  ">
+                Advertencia: ¡No es posible recuperar una vez que se elimina!
+              </p>
+              <div style="display: flex; justify-content: center">
+                <button class="btn btn-danger" style="
+                      margin-right: 1rem;
+                      width: 8rem;
+                      font-size: 20px;
+                      text-shadow: 1px 1px 1px #000;
+                      box-shadow: 2px 2px 4px #000;
+                      font-family: 'Inconsolata', monospace;
+                    " (click)="modal.dismiss()">
+                  Cancelar
+                </button>
+                <button class="btn btn-success" style="
+                      margin-left: 1rem;
+                      width: 8rem;
+                      font-size: 20px;
+                      text-shadow: 1px 1px 1px #000;
+                      box-shadow: 2px 2px 4px #000;
+                      font-family: 'Inconsolata', monospace;
+                    " (click)="modal.dismiss()" (click)="resetCreditos()">
+                  Confirmar
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </ion-modal>
+        <ion-title class="toolbar-title">{{emailRecuperado}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-icon id="cerrarSesion" (click)="cerrarSesion()" name="log-out" color="danger"
+            class="toolbar-icon"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  <h2 class="ion-text-center">SALDO DISPONIBLE</h2>
+  <ion-card [hidden]="scanActive" class="card-center">
+    <ion-card-content style="background-color: #63859e;">
+      <h1 style="color: #000; font-size: 160px; text-shadow: 2px 2px 4px #fff;">${{creditoAcumulado}}</h1>
+    </ion-card-content>
+  </ion-card>
+  <div class="button-container">
+    <ion-button (click)="startScanner()" [hidden]="scanActive" class="scan-button">
+      <ion-icon color="dark" class="iconScan" name="finger-print-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <!-- ******************************* SPINNER *******************************-->
+  <div *ngIf="showSpinner" class="custom-spinner">
+    <h1 class="spinnerh1">Cargando...</h1>
+    <img src="/assets/icon/icon.png" alt="Custom Spinner" />
+  </div>
+</ion-content>
+
+<ion-row class="scan-button" [hidden]="!scanActive">
+  <ion-col class="ion-no-padding">
+    <ion-button expand="full" (click)="stopScanner()">Stop</ion-button>
+  </ion-col>
+</ion-row>
+<div class="scan-box" [hidden]="!scanActive"></div>

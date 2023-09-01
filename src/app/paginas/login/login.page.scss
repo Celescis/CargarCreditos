@@ -1,0 +1,187 @@
+@import url('https://fonts.cdnfonts.com/css/casino');
+
+
+.contenedor {
+  --background: radial-gradient(circle at 50% -20.71%, #cbe7e1 0, #cae7e3 6.25%, #c9e7e6 12.5%, #c9e7e8 18.75%, #c9e7eb 25%, #c9e7ed 31.25%, #cae6ef 37.5%, #cbe6f1 43.75%, #cde5f2 50%, #cfe4f3 56.25%, #d1e4f4 62.5%, #d4e3f5 68.75%, #d7e2f5 75%, #dae1f5 81.25%, #dde0f4 87.5%, #e0e0f4 93.75%, #e3dff2 100%);
+  position: fixed;
+  --overflow: hidden;
+  --overscroll-behavior-y: none;
+  display: flex;
+}
+
+@media screen and (orientation: landscape) {
+  ion-content {
+    --overflow: auto !important;
+    --overscroll-behavior-y: contain !important;
+  }
+}
+
+ion-header {
+  height: 70px;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headert {
+  font-size: 80px;
+  font-family: 'Casino 3D', sans-serif;
+  justify-content: center;
+  text-align: center;
+  color: #d9bde2;
+  
+}
+
+.gif {
+  height: 100px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.alert-danger.mensajeError {
+  font-size: 0.7rem;
+  padding: 0.4rem;
+  margin-top: 0;
+}
+
+.card {
+  margin-top: 20px;
+  box-shadow: 2px 40px 50px rgba(1, 1, 1, 0.5);
+}
+
+ion-card-content {
+  padding-bottom: 20px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  min-height: 200px;
+  background-image: url("/assets/background/splashback.png");
+  background-size: cover;
+}
+
+.ion-item {
+  --ion-item-background: white;
+  // margin-top: -3.5%;
+  border: 2px solid #d9bde2;
+  border-radius: 35px;
+  // justify-content: space-evenly;
+}
+
+.botonimg {
+  width: 50px;
+  height: 50px;
+}
+
+.parrafos {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: 4px;
+  margin-bottom: 50px;
+  font-family: 'Casino', sans-serif;
+  font-weight: 800;
+  font-size: medium;
+}
+
+.button-container {
+  font-size: medium;
+  font-family: 'Casino', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.custom-fab-final {
+  // margin-left: 305px;
+  margin-top: -40px;
+}
+
+.custom-fab-medio {
+  margin-top: -40px;
+  // margin-left: -2px;
+}
+
+.custom-fab-inicio {
+  // margin-left: -305px;
+  margin-top: -40px;
+}
+
+.item-background-color {
+  --ion-item-background: transparent;
+}
+
+.itemsFormLogin {
+  // border-radius: 50px;
+  height: 55px;
+  box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.3);
+  --highlight-height: 0px;
+
+  background: #d9bde2;
+  color: black;
+  margin-bottom: 40px;
+
+  ion-input {
+    font-size: 14px;
+    --padding-top: 20px;
+    --padding-bottom: 19px;
+    --padding-start: 5px;
+    color: black;
+
+
+  }
+}
+
+.botoncito {
+  color: black;
+  --background: #d9bde2;
+}
+
+//SPINNER
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.custom-spinner img {
+  animation: rotate-center 1s ease-in-out infinite both;
+  max-width: 200px;
+  height: 200px;
+  opacity: 1;
+}
+
+.custom-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+  background-color: rgba(91, 91, 91, 0.932);
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-position: center;
+}
+
+.spinnerh1 {
+  font-family: 'Righteous', cursive;
+  position: absolute;
+  top: 200px;
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

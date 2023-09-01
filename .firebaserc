@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cargadecredito-e1444": {
+      "hosting": {
+        "app": [
+          "cargadecredito-e1444"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cargadecredito-e1444"
+  }
+}
